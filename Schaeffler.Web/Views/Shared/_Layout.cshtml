@@ -1,0 +1,75 @@
+﻿
+
+@{
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Schaeffler</title>
+    <link rel="shortcut icon" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/addresser/favicon/favicon.ico" type="image/ico" />
+    <!-- iOS/ANDROID TOUCH-ICONS -->
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/responsive.css" media="all" />
+    <!--[if lt IE 9]>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+    <!--[if !(IE)|(gte IE 9)]><!-->
+    <script src="@appPath/Contents/scripts/jquery-3.4.1.min.js"></script>
+    <!--<![endif]-->
+    <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
+    <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
+    <script src="@appPath/Contents/scripts/common.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="companyLogo"><img src="@appPath/Contents/images/logo.jpg" alt="Schaeffler"></div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer>
+        <div class="container">
+            @if (ViewBag.Title != null && ViewBag.Title == "Index_TH")
+            {
+                <p><strong>ติดตามเราได้ที่</strong></p>
+            }
+            else
+            {
+                <p><strong>Terhubung dengan kami</strong></p>
+            }
+            <ul>
+                <li><a href="https://www.facebook.com/SchaefflerAsiaPacific/" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
+                <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
+                <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
+                <li><a href="https://www.youtube.com/user/SchaefflerGlobal" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
+                <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
+            </ul>
+
+            <p class="policy"><a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">Privacy policy</a> <span>|</span> <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/legal-notice/index.jsp" target="_blank">Legal notice</a></p>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,281 @@
+﻿@{
+    // ViewBag.Title = "Home Page";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model feedback
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>Suku Cadang Kualitas O.E Jerman</h1>
+            <p>Solusi yang dibuat khusus untuk Aftermarket Otomotif</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Divisi Aftermarket Otomotif Schaeffler memberikan solusi perbaikan inovatif dalam kualitas peralatan asli. Di bawah tiga merek LuK, INA dan FAG, kami menawarkan berbagai solusi dalam kualitas peralatan asli untuk perbaikan mobil penumpang, kendaraan ringan atau komersial dan traktor.</p>
+    </div>
+    <div class="grids">
+        <ul class="top">
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/luk-logo.jpg" alt="Kopling LuK"></div>
+                <h2>Kopling LuK</h2>
+                <p>LuK telah menjadi mitra yang kompeten dan inovatif untuk industri otomotif selama lebih dari 50 tahun.</p>
+                <p>Produk populer kami untuk perbaikan transmisi termasuk;</p>
+                <ol>
+                    <li>LuK Dual Mass Flywheel (DMF)</li>
+                    <li>LuK RepSet family (RepSet, RepSet DMF, RepSet 2CT)</li>
+                    <li>LuK Hydraulic Release System (Release Bearing, Concentric Slave Cylinder, Master Cylinder)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/luk-img.jpg" alt="Kopling LuK"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/ina-logo.jpg" alt="Suku Cadang Mesin INA"></div>
+                <h2>Suku Cadang Mesin INA</h2>
+                <p>INA adalah spesialis mesin di pasar suku cadang dengan solusi perbaikan cerdas untuk empat sistem utama.</p>
+                <p>Produk populer kami untuk perbaikan mesin meliputi;</p>
+                <ol>
+                    <li>Cooling: INA Water Pump</li>
+                    <li>FEAD: INA Overrunning Alternator Pulley (OAP), INA FEAD KIT</li>
+                    <li>Timing Belt: INA Timing Belt KIT (dengan atau tanpa Water Pump)</li>
+                    <li>Valve Train: INA Finger Follower, INA Tappet</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/ina-img.jpg" alt="Suku Cadang Mesin INA"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/fag-logo.jpg" alt="FAG Bantalan Roda"></div>
+                <h2>FAG Bantalan Roda</h2>
+                <p>FAG memiliki tradisi bangga akan kualitas dan inovasi dan memimpin dalam teknologi bantalan rol.</p>
+                <p>Produk populer kami untuk perbaikan sasis meliputi;</p>
+                <ol>
+                    <li>FAG Wheel Bearing (Generation 1 – 3)</li>
+                    <li>FAG Steering and Suspension Parts (FAG Ball Joint, FAG Track Control Arm)</li>
+                    <li>FAG SmartSET and FAG Repair Insert Unit (RIU)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Bantalan Roda"></div>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li><div class="image"><img src="@appPath/Contents/images/luk-img.jpg" alt="Kopling LuK"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/ina-img.jpg" alt="Suku Cadang Mesin INA"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Bantalan Roda"></div></li>
+        </ul>
+    </div>
+    <div class="paragraph">
+        <p>Schaeffler REPXPERT – Semua dalam satu portal online untuk bengkel, untuk mendukung pekerjaan anda sehari-hari.</p>
+    </div>
+    <div class="boxContent">
+        <div class="left">
+            <div class="logo"><img src="@appPath/Contents/images/REPXPERT_logo.jpg" alt="REPXPERT"></div>
+            <h1>KERJA. BELAJAR. INFORMASI.</h1>
+            <ol>
+                <li>Akses cepat dan mudah ke semua informasi produk Schaeffler</li>
+                <li>Video tutorial tentang transmisi, mesin, dan sasis</li>
+                <li>Video perbaikan, instruksi pemasangan dan brosur teknis.</li>
+            </ol>
+            <p><strong>Daftar sekarang gratis di <a href="https://www.repxpert.com/" target="_blank">www.repxpert.com</a></strong></p>
+        </div>
+        <div class="right"><a href="https://www.repxpert.com/" target="_blank"><img src="images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
+    </div>
+    <div class="contactUs">
+        <div class="container">
+            <h1>INGIN TAHU LEBIH BANYAK?</h1>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "contactForm" }))
+            {
+                <div class="col_2">
+                    <span class="fieldName">Nama lengkap*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.FullName)
+                        @Html.ValidationMessageFor(m => m.FullName)
+                        @*<input type="text" name="fullName">
+                            <label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">Alamat email*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email)
+                        @*<input type="text" name="emailAddress">
+                            <label class="error" style="display:block;">Silahkan isi alamat email</label>*@
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">Nama perusahaan*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.CompanyName)
+                        @Html.ValidationMessageFor(m => m.CompanyName)
+                        @*<input type="text" name="companyName">
+                            <label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">Nomor telepon*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "numeric" })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                        @*<input type="text" name="phoneNumber">
+                            <label class="error" style="display:block;">Silahkan masukkan nomor telepon yang benar </label>*@
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">Merek / layanan apa yang anda minati? *</span>
+                    <span>
+
+
+                        @if (ViewBag.BrandServices != null)
+                        {
+                            List<BrandService> brandServices = (List<BrandService>)ViewBag.BrandServices;
+                            int i = 0;
+                            foreach (BrandService BS in brandServices)
+                            {
+                                if (i == 0 || i == 2)
+                                {
+                                    <text><ul class="half">
+                                    </text>
+
+                                }
+
+                                <li>
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="width:110px;">
+                                                <label class="checkBoxStyle">
+                                                    @BS.Id_Name
+                                                    <input type="checkbox" class="BrandServiceClass" value="@BS.Id" name="BrandService[@i].Id">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="BrandService[@i].Name" class="required" placeholder="Sebutkan">
+                                                @Html.ValidationMessage("BrandService[" + i + "].Name")
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                i++;
+                                if (i == 0 || i == 2)
+                                {
+                                    @Html.Raw("</ul>")
+
+                                }
+                            }
+                        }
+
+                        <input type="hidden" name="BrandServices" id="BrandServices" />
+                        @Html.ValidationMessage("BrandServices")
+
+                        @*<label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                </span>
+            </div>
+            <div class="col_2 last">
+                <span class="fieldName">Untuk jenis kendaraan apa yang anda tertarik?*</span>
+                <span>
+                    @if (ViewBag.VehicleTypes != null)
+                    {
+                        List<VehicleType> vehicleTypes = (List<VehicleType>)ViewBag.VehicleTypes;
+                        int i = 0;
+                        foreach (VehicleType BS in vehicleTypes)
+                        {
+                            if (i == 0 || i == 2)
+                            {
+                                <text><ul class="half">
+                                </text>
+
+                            }
+                                          <li>
+                                              <label class="checkBoxStyle">
+                                                  @BS.Id_Name
+                                                  <input type="checkbox" class="vehicleTypesclass" value="@BS.Id" name="VehicleType[@i].Id">
+
+                                                  <span class="checkmark"></span>
+                                              </label>
+                                              <input type="hidden" name="VehicleType[@i].Name" value="@BS.Id_Name">
+                                          </li>
+                            i++;
+                            if (i == 0 || i == 2)
+                            {
+                                @Html.Raw("</ul>")
+
+                            }
+                        }
+                    }
+                    <input type="hidden" name="VehicleTypes" id="VehicleTypes" />
+                    @Html.ValidationMessage("VehicleTypes")
+
+            </span>
+        </div>
+        <div class="col w700px">
+            <span class="fieldName">Informasi apa yang ingin anda terima dari kami? *</span>
+            <span>
+
+
+                @if (ViewBag.InformationTypes != null)
+                {
+                    List<InformationType> informationTypes = (List<InformationType>)ViewBag.InformationTypes;
+                    int i = 0;
+                    foreach (InformationType BS in informationTypes)
+                    {
+                        if (i == 0 || i == 2)
+                        {
+                            <text><ul class="half">
+                            </text>
+                        }
+                        <li>
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="width:170px;">
+                                        <label class="checkBoxStyle">
+                                            @BS.Id_Name
+                                            <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="InformationType[@i].Name" class="required" placeholder="Sebutkan">
+                                        @Html.ValidationMessage("InformationType[" + i + "].Name")
+
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        i++;
+                        if (i == 0 || i == 2)
+                        {
+                            @Html.Raw("</ul>")
+
+                        }
+                    }
+
+                }
+                <input type="hidden" name="InformationTypes" id="InformationTypes" />
+                @Html.ValidationMessage("InformationTypes")
+
+
+        </span>
+    </div>
+    <div class="col">
+        <span class="fieldName">Pesan lainnya</span>
+        @Html.TextAreaFor(m => m.Message)
+
+        <span></span>
+    </div>
+    <a class="submitBtn" href="javascript:void(0)" style="text-decoration: none;">Kirim</a>
+    @*<input type="submit" class="submitBtn" value="Kirim">*@
+}
+
+            <!-- This will appear once the form have submitted. -->
+            @if (ViewBag.Success!=null)
+            {
+                <p class="formSubmitMsg">Kami telah menerima pertanyaan anda dan akan segera menghubungi anda.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+<script src="@appPath/Contents/scripts/contactUsID.js"></script>

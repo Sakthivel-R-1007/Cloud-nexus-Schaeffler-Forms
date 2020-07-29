@@ -1,0 +1,92 @@
+﻿
+@{
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model feedback
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Schaeffler</title>
+</head>
+
+<body>
+    <table cellpadding="0" cellspacing="0" border="0" width="600" style="background:#ffffff;" align="center">
+        <tr>
+            <td style="padding:10px;background:#00893d;"><img src="@appPath/Contents/images/logo.jpg" border="0"></td>
+        </tr>
+        <tr>
+            <td style="padding:10px 10px 30px 10px; border-bottom:2px solid #38b449;">
+                <table cellpadding="0" cellspacing="0" border="0" width="600" style="background:#ffffff;" align="center">
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Nama lengkap:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.FullName != null? Model.FullName:"")</td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Alamat email:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.Email != null? Model.Email : "")</td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Nama perusahaan:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.CompanyName != null? Model.CompanyName : "")</td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Nomor telepon:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.PhoneNumber != null? Model.PhoneNumber : "")</td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">DateTime:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.CreatedOn != null? Model.CreatedOn : "")</td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Merek / layanan apa yang anda minati? :</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">
+                           
+
+                            @if (Model.BrandService != null)
+                            {
+                                foreach(BrandService BS in Model.BrandService)
+                                {
+                                    <p>@BS.Id_Name  <text> : </text>@BS.Name</p>
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Untuk jenis kendaraan apa yang anda tertarik?:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">
+
+                            @if (Model.VehicleType != null)
+                            {
+                                var products = String.Join(",", Model.VehicleType.Select(p => p.Id_Name));
+                                @products
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Informasi apa yang ingin anda terima dari kami? :</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">
+                            @if (Model.InformationType != null)
+                            {
+                                foreach (InformationType BS in Model.InformationType)
+                                {
+                                    <p>@BS.Id_Name  <text> : </text>@BS.Name</p>
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; font-weight:700; color:#000000;">Pesan lainnya:</td>
+                        <td valign="top" style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:20px; color:#000000;">@(Model.Message != null? Model.Message : "")</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:10px; font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:16px; color:#000000;">Copyright © 2020 Schaeffler Group. All rights reserved.</td>
+        </tr>
+    </table>
+</body>
+</html>
+

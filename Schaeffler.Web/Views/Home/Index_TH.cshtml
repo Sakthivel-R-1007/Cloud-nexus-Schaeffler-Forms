@@ -1,0 +1,271 @@
+﻿
+@{
+    ViewBag.Title = "Index_TH";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model feedback
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>ชิ้นส่วนคุณภาพมาตรฐานโรงงานประกอบ จากเยอรมัน</h1>
+            <p>เป็นโซลูชั่นที่ออกแบบมาโดยเฉพาะสำหรับชิ้นส่วนอะไหล่ทดแทน</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>แผนกอะไหล่ทดแทนของSchaeffler ขอนำเสนอโซลูชั่นที่เป็นนวัตกรรมในการซ่อมด้วยอะไหล่คุณภาพเดียวกับของแท้ติดรถยนต์ ภายใต้ยี่ห้อ LuK, INA และ FAG โดยเรามีโซลูชั่นที่หลากหลายซึ่งเป็นอะไหล่ที่มีคุณภาพเช่นเดียวกับของแท้ติดรถยนต์ ใช้สำหรับงานซ่อมทั้งรถยนต์นั่งส่วนบุคคล รถบรรทุกขนาดเล็กหรือรถบรรทุกเพื่อการพาณิชย์และรถแทรกเตอร์</p>
+    </div>
+    <div class="grids">
+        <ul class="top">
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/luk-logo.jpg" alt="ชุดคลัตช์ของ LuK"></div>
+                <h2>ชุดคลัตช์ของ LuK</h2>
+                <p>LuK ถือว่าเป็นพันธมิตรที่มีความสามารถและนำเสนอนวัตกรรมใหม่ๆให้กับอุตสาหกรรมยานยนต์มายาวนานกว่า 50 ปี</p>
+                <p>โดยผลิตภัณฑ์ยอดนิยมของเราสำหรับการซ่อมระบบส่งกำลัง ได้แก่</p>
+                <ol>
+                    <li>ฟลายวีลสองชั้น LuK (DMF)</li>
+                    <li>ตระกูลของชุดซ่อม RepSet LuK (RepSet, RepSet DMF, RepSet 2CT)</li>
+                    <li>ระบบไฮดรอลิก LuK (ลูกปืนกดคลัตช์, แม่ปั้มคลัตช์ล่าง, แม่ปั้มคลัตช์บน)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/luk-img.jpg" alt="คลัตช์ LuK"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/ina-logo.jpg" alt="ชุดอะไหล่เครื่องยนต์ของ INA"></div>
+                <h2>อะไหล่เครื่องยนต์ INA </h2>
+                <p>INA ถือว่าเป็นผู้เชี่ยวชาญด้านชิ้นส่วนอะไหล่เครื่องยนต์ในตลาด ซึ่งชุดซ่อมจะมาพร้อมกับโซลูชั่นอัจฉริยะในการซ่อมระบบสำคัญๆ4ส่วนในเครื่องยนต์</p>
+                <p>โดยผลิตภัณฑ์ยอดนิยมของเราสำหรับการซ่อมเครื่องยนต์ ได้แก่</p>
+                <ol>
+                    <li>ระบบหล่อเย็น: ปั๊มน้ำ INA</li>
+                    <li>ระบบสายพานหน้าเครื่อง: มู่เลย์ไดชาร์จ/ลูกรอกไดชาร์จ INA (OAP), ชุดซ่อมสายพานหน้าเครื่อง INA</li>
+                    <li>ระบบสายพานราวลิ้น: ชุดซ่อมสายพานราวลิ้น INA (แบบมีหรือไม่มีปั๊มน้ำ)</li>
+                    <li>ระบบวาล์วเครื่องยนต์: กระเดื่องกดวาล์ว INA, ลูกเบี้ยว/ขาส่งลิ้นไอดี-ไอเสีย</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/ina-img.jpg" alt="ชุดอะไหล่เครื่องยนต์ของ INA"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/fag-logo.jpg" alt="ชุดตลับลูกปืนล้อของ FAG"></div>
+                <h2>ชุดตลับลูกปืนล้อของ FAG</h2>
+                <p>FAG มีความภูมิใจในด้านคุณภาพและนวัตกรรม รวมถึงการเป็นผู้นำในด้านเทคโนโลยีเกี่ยวกับตลับลูกปืนเม็ดกลม</p>
+                <p>โดยผลิตภัณฑ์ที่เป็นที่นิยมของเราสำหรับการซ่อมระบบช่วงล่าง ได้แก่</p>
+                <ol>
+                    <li>ตลับลูกปืนล้อ FAG (รุ่นที่ 1 – 3)</li>
+                    <li>ชิ้นส่วนพวงมาลัย FAG และชิ้นส่วนช่วงล่าง (ลูกหมาก FAG, ปีกนก FAG)</li>
+                    <li>ชุด SmartSET FAG และ ชุด Repair Insert Unit (RIU)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/fag-img.jpg" alt="ชุดตลับลูกปืนล้อของ FAG"></div>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li><div class="image"><img src="@appPath/Contents/images/luk-img.jpg" alt="ชุดคลัตช์ของ LuK"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/ina-img.jpg" alt="ชุดอะไหล่เครื่องยนต์ของ INA"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/fag-img.jpg" alt="ชุดตลับลูกปืนล้อของ FAG"></div></li>
+        </ul>
+    </div>
+    <div class="paragraph">
+        <p>Schaeffler REPXPERT – คือช่องทางออนไลน์ที่รวบรวมข้อมูลทั้งหมดไว้ในที่เดียวเหมาะสำหรับศูนย์ซ่อมหรืออู่ซ่อมรถ เพื่อช่วยให้การทำงานประจำวันของคุณง่ายขึ้น</p>
+    </div>
+    <div class="boxContent">
+        <div class="left">
+            <div class="logo"><img src="@appPath/Contents/images/REPXPERT_logo.jpg" alt="REPXPERT"></div>
+            <h1>ปฏิบัติงาน  เรียนรู้  ข่าวสาร</h1>
+            <ol>
+                <li>เข้าถึงข้อมูลผลิตภัณฑ์ของแชฟฟ์เลอร์ได้ง่ายและรวดเร็ว</li>
+                <li>วิดีโอช่วยสอนเกี่ยวกับ ระบบส่งกำลัง ระบบเครื่องยนต์ และระบบช่วงล่าง</li>
+                <li>คำแนะนำในการติดตั้ง และโบรชัวร์ทางด้านเทคนิค</li>
+            </ol>
+            <p><strong>ลงทะเบียนตอนนี้ได้ฟรีที่ <a href="https://www.repxpert.com/" target="_blank">www.repxpert.com</a></strong></p>
+        </div>
+        <div class="right"><a href="https://www.repxpert.com/" target="_blank"><img src="@appPath/Contents/images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
+    </div>
+    <div class="contactUs">
+        <div class="container">
+            <h1>ต้องการทราบข้อมูลเพิ่มเติม</h1>
+            @using (Html.BeginForm("Index_TH", "Home", FormMethod.Post, new { id = "contactForm" }))
+            {
+                <div class="col_2">
+                    <span class="fieldName">ชื่อ-นามสกุล*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.FullName)
+                        @Html.ValidationMessageFor(m => m.FullName)
+
+                        @*<input type="text" name="fullName">
+                            <label class="error" style="display:block;">ต้องระบุข้อมูลในส่วนนี้</label>*@
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">อีเมล*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email)
+                        @*<label class="error" style="display:block;">กรุณาใส่อีเมล์ที่ถูกต้อง</label>*@
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">ชื่อบริษัท*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.CompanyName)
+                        @Html.ValidationMessageFor(m => m.CompanyName)
+                        @*<label class="error" style="display:block;">ต้องระบุข้อมูลในส่วนนี้</label>*@
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">หมายเลขโทรศัพท์*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "numeric" })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">ยี่ห้อ / บริการ ที่คุณสนใจ*</span>
+                    <span>
+                        @if (ViewBag.BrandServices != null)
+                        {
+                            List<BrandService> brandServices = (List<BrandService>)ViewBag.BrandServices;
+                            int i = 0;
+                            foreach (BrandService BS in brandServices)
+                            {
+                                if (i == 0 || i == 2)
+                                {
+                                    <text><ul class="half">
+                                    </text>
+
+                                }
+
+                                <li>
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="width:110px;">
+                                                <label class="checkBoxStyle">
+                                                    @BS.TH_Name
+                                                    <input type="checkbox" class="BrandServiceClass" value="@BS.Id" name="BrandService[@i].Id">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="BrandService[@i].Name" class="required" placeholder="Sebutkan">
+                                                @Html.ValidationMessage("BrandService[" + i + "].Name")
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                i++;
+                                if (i == 0 || i == 2)
+                                {
+                                    @Html.Raw("</ul>")
+
+                                }
+                            }
+                        }
+
+                        <input type="hidden" name="BrandServices" id="BrandServices" />
+                        @Html.ValidationMessage("BrandServices")
+                        @*<label class="error" style="display:block;">ต้องระบุข้อมูลในส่วนนี้</label>*@
+                </span>
+            </div>
+            <div class="col_2 last">
+                <span class="fieldName">รถประเภทไหน ที่คุณสนใจ*</span>
+                <span>
+                    @if (ViewBag.VehicleTypes != null)
+                    {
+                        List<VehicleType> vehicleTypes = (List<VehicleType>)ViewBag.VehicleTypes;
+                        int i = 0;
+                        foreach (VehicleType BS in vehicleTypes)
+                        {
+                            if (i == 0 || i == 2)
+                            {
+                                <text><ul class="half">
+                                </text>
+
+                            }
+                            <li>
+                                <label class="checkBoxStyle">
+                                    @BS.TH_Name
+                                    <input type="checkbox" class="vehicleTypesclass" value="@BS.Id" name="VehicleType[@i].Id">
+
+                                    <span class="checkmark"></span>
+                                </label>
+                                <input type="hidden" name="VehicleType[@i].Name" value="@BS.TH_Name">
+                            </li>
+                            i++;
+                            if (i == 0 || i == 2)
+                            {
+                                @Html.Raw("</ul>")
+
+                            }
+                        }
+                    }
+                    <input type="hidden" name="VehicleTypes" id="VehicleTypes" />
+                    @Html.ValidationMessage("VehicleTypes")
+                    @*<label class="error" style="display:block;">ต้องระบุข้อมูลในส่วนนี้</label>*@
+            </span>
+        </div>
+        <div class="col w700px">
+            <span class="fieldName">ข้อมูลอะไรที่คุณต้องการรับจากเรา*</span>
+            <span>
+                @if (ViewBag.InformationTypes != null)
+                {
+                    List<InformationType> informationTypes = (List<InformationType>)ViewBag.InformationTypes;
+                    int i = 0;
+                    foreach (InformationType BS in informationTypes)
+                    {
+                        if (i == 0 || i == 2)
+                        {
+                            <text><ul class="half">
+                            </text>
+                        }
+                        <li>
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="width:170px;">
+                                        <label class="checkBoxStyle">
+                                            @BS.Id_Name
+                                            <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="InformationType[@i].Name" class="required" placeholder="Sebutkan">
+                                        @Html.ValidationMessage("InformationType[" + i + "].Name")
+
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        i++;
+                        if (i == 0 || i == 2)
+                        {
+                            @Html.Raw("</ul>")
+
+                        }
+                    }
+
+                }
+                <input type="hidden" name="InformationTypes" id="InformationTypes" />
+                @Html.ValidationMessage("InformationTypes")
+
+                @*<label class="error" style="display:block;">ต้องระบุข้อมูลในส่วนนี้</label>*@
+        </span>
+    </div>
+    <div class="col">
+        <span class="fieldName">รายละเอียดเพิ่มเติม</span>
+        @Html.TextAreaFor(m => m.Message)
+        @*<span><textarea></textarea></span>*@
+    </div>
+    <a class="submitBtn" href="javascript:void(0)" style="text-decoration: none;">ส่ง</a>
+    @*<input type="submit" class="submitBtn" value="ส่ง">*@
+}
+
+            <!-- This will appear once the form have submitted. -->
+            <p class="formSubmitMsg" style="display:none;">ทางเราได้รับคำถาม/ความต้องการของคุณแล้ว และจะติดต่อกลับหาคุณในเร็วๆนี้</p>
+        </div>
+    </div>
+</div>
+
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+<script src="@appPath/Contents/scripts/contactUsTH.js"></script>
+
