@@ -175,7 +175,7 @@ namespace Schaeffler.Web.Controllers
 
                     DataTable list = new DataTable();
 
-                    string ReportName = "Repair";
+                    string ReportName = "Schaeffler";
                     var workbook = new XLWorkbook();
                     string range = "A1:B2";
 
