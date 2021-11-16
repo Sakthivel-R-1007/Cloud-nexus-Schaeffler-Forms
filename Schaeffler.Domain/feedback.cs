@@ -10,6 +10,7 @@ namespace Schaeffler.Domain
     {
 
         public Int64 Id { get; set; }
+        public string Country { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
 
@@ -20,7 +21,7 @@ namespace Schaeffler.Domain
 
         public string SystemIp { get; set; }
 
-        public string Country { get; set; }
+       
 
         public List<BrandService> BrandService { get; set; }
 

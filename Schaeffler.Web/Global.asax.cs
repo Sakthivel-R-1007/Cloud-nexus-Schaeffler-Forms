@@ -31,7 +31,9 @@ namespace Schaeffler.Web
             HttpContext context = app.Context;
             Application["ApplicationPath"] = FirstRequestInitialisation.Initialise(context);
 
-
+            //live
+            //if (!HttpContext.Current.Request.Url.Host.Contains("www") || !HttpContext.Current.Request.Url.OriginalString.Contains("https"))
+            //    Response.Redirect(Application["ApplicationPath"].ToString());
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -66,10 +68,13 @@ namespace Schaeffler.Web
                             Uri uri = HttpContext.Current.Request.Url;
 
                             //Local
-                            //host = uri.Scheme + Uri.SchemeDelimiter + uri.Host + ":" + uri.Port;
+                            host = uri.Scheme + Uri.SchemeDelimiter + uri.Host + ":" + uri.Port;
 
                             ////Staging
-                            host = uri.Scheme + Uri.SchemeDelimiter + uri.Host;
+                            //host = uri.Scheme + Uri.SchemeDelimiter + uri.Host;
+
+                            //Live
+                            //host = "https" + Uri.SchemeDelimiter + uri.Host;
 
 
                         }

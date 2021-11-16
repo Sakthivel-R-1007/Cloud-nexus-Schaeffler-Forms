@@ -35,6 +35,16 @@
     <!--<![endif]-->
     <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
     <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173385004-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173385004-1');
+    </script>
+
     <script src="@appPath/Contents/scripts/common.js"></script>
 </head>
 <body>
@@ -46,13 +56,21 @@
     </header>
     <div class="wrapper">
         @RenderBody()
-        <hr />
+
     </div>
     <footer>
         <div class="container">
             @if (ViewBag.Title != null && ViewBag.Title == "Index_TH")
             {
                 <p><strong>ติดตามเราได้ที่</strong></p>
+            }
+            else if (ViewBag.Title != null && ViewBag.Title == "EN")
+            {
+                <p><strong>Connect with Us</strong></p>
+            }
+            else if (ViewBag.Title != null && ViewBag.Title == "JP")
+            {
+                <p><strong>お問い合わせ</strong></p>
             }
             else
             {
@@ -66,7 +84,23 @@
                 <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
             </ul>
 
-            <p class="policy"><a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">Privacy policy</a> <span>|</span> <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/legal-notice/index.jsp" target="_blank">Legal notice</a></p>
+            <p class="policy">
+
+                @if (ViewBag.Title != null && ViewBag.Title == "JP")
+                {
+                    <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">
+
+                        プライバシーポリシー | 免責事項
+                    </a>
+                }
+                else
+                {
+                    <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">
+                        Privacy policy
+                    </a>
+                }
+                <span>|</span> <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/legal-notice/index.jsp" target="_blank">Legal notice</a>
+            </p>
         </div>
     </footer>
 

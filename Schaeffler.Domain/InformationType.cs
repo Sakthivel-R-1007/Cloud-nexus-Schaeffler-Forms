@@ -12,7 +12,9 @@ namespace Schaeffler.Domain
         public string Name { get; set; }
         public string Id_Name { get; set; }
         public string TH_Name { get; set; }
+        public string JP_Name { get; set; }
 
+        public string InformationName { get; set; }
 
         public string ProductInformation { get; set; }
         public string Msg1 { get; set; }

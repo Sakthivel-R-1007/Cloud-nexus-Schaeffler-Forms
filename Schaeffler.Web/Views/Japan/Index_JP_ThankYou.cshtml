@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index_JP";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>ドイツ製純正品質スペアパーツ</h1>
+            <p>自動車アフターマーケットにおけるオーダーメイドソリューション</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p style="text-align:center;font-weight:700;font-size:22px;line-height:30px;padding:20px 0;">この度は、お問い合せいただき、誠にありがとうございました。内容を確認の上、折り返しご連絡させていただきます。</p>
+    </div>
+</div>
+
+<script>
+window.location.hash="no-back-button";
+window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+window.onhashchange=function(){window.location.hash="no-back-button";}
+</script>
+
+

@@ -86,7 +86,7 @@
                 <div class="col_2">
                     <span class="fieldName">ชื่อ-นามสกุล*</span>
                     <span>
-                        @Html.TextBoxFor(m => m.FullName)
+                        @Html.TextBoxFor(m => m.FullName,new {@id= "FullName" })
                         @Html.ValidationMessageFor(m => m.FullName)
 
                         @*<input type="text" name="fullName">
@@ -112,7 +112,7 @@
                 <div class="col_2 last">
                     <span class="fieldName">หมายเลขโทรศัพท์*</span>
                     <span>
-                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "numeric" })
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "" })
                         @Html.ValidationMessageFor(m => m.PhoneNumber)
 
                     </span>
@@ -144,7 +144,7 @@
                                                 </label>
                                             </td>
                                             <td>
-                                                <input type="text" name="BrandService[@i].Name" class="required" placeholder="Sebutkan">
+                                                <input type="text" name="BrandService[@i].Name" class="" placeholder="โปรดระบุ">
                                                 @Html.ValidationMessage("BrandService[" + i + "].Name")
                                             </td>
                                         </tr>
@@ -220,13 +220,13 @@
                                 <tr>
                                     <td style="width:170px;">
                                         <label class="checkBoxStyle">
-                                            @BS.Id_Name
+                                            @BS.TH_Name
                                             <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
                                             <span class="checkmark"></span>
                                         </label>
                                     </td>
                                     <td>
-                                        <input type="text" name="InformationType[@i].Name" class="required" placeholder="Sebutkan">
+                                        <input type="text" name="InformationType[@i].Name" class="" placeholder="โปรดระบุ">
                                         @Html.ValidationMessage("InformationType[" + i + "].Name")
 
 
@@ -258,8 +258,10 @@
     @*<input type="submit" class="submitBtn" value="ส่ง">*@
 }
 
-            <!-- This will appear once the form have submitted. -->
-            <p class="formSubmitMsg" style="display:none;">ทางเราได้รับคำถาม/ความต้องการของคุณแล้ว และจะติดต่อกลับหาคุณในเร็วๆนี้</p>
+            @if (ViewBag.Success != null)
+            {
+                <p class="formSubmitMsg">ทางเราได้รับคำถาม/ความต้องการของคุณแล้ว และจะติดต่อกลับหาคุณในเร็วๆนี้</p>
+            }
         </div>
     </div>
 </div>
@@ -268,4 +270,14 @@
 <script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
 <script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
 <script src="@appPath/Contents/scripts/contactUsTH.js"></script>
+<script>
+
+    $(function () {
+
+        $("#FullName").keypress(function () {
+            $(".formSubmitMsg").hide();
+        });
+
+    });
+</script>
 

@@ -19,5 +19,7 @@ namespace Schaeffler.Persistence.Interface
 
         ReportModelView GetFeedbackReport();
 
+        ReportModelView GetFeedbackReportNew();
+
     }
 }

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Schaeffler";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>Suku Cadang Kualitas O.E Jerman</h1>
+            <p>Solusi yang dibuat khusus untuk Aftermarket Otomotif</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p style="text-align:center;font-weight:700;font-size:22px;line-height:30px;padding:20px 0;">Kami telah menerima pertanyaan anda dan akan segera menghubungi anda.</p>
+    </div>
+</div>
+
+<script>
+    window.location.hash = "no-back-button";
+    window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange = function () { window.location.hash = "no-back-button"; }
+</script>

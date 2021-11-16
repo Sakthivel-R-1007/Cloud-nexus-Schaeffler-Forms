@@ -20,6 +20,8 @@ namespace Schaeffler.Web
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IFeedbackDao, FeedbackDao>();
             container.RegisterType<IUtilityService, UtilityService>();
+            container.RegisterType<IUserAccountDao, UserAccountDao>();
+            container.RegisterType<IUserDao, UserDao>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

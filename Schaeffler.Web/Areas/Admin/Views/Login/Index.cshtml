@@ -1,0 +1,94 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LoginLayout.cshtml";
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    ViewBag.Tile = "Login";
+}
+
+@model User
+<div class="loginPage">
+    <div class="container">
+        <div class="logo"><img src="@appPath/Contents/Admin/images/logo.jpg" alt="Schaeffler"></div>
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "LoginForm" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.TextBoxFor(m => m.Email, new { @type = "text", @placeholder = "Enter Username", @class = "user" })
+            @Html.ValidationMessageFor(m => m.Email)
+            <!--<input type="text" name="username" id="username" placeholder="Enter Username" class="user" />-->
+            <!--label class="error">This field is required.</label-->
+            @*<input type="password" name="userpwd" id="userpwd" placeholder="Enter Password" class="pwd" />*@
+            @Html.TextBoxFor(m => m.Password, new { @type = "password", @placeholder = "Enter Password", @class = "pwd" })
+            @Html.ValidationMessageFor(m => m.Password)
+            <!--label class="error">This field is required.</label-->
+            <div class="padding5"></div>
+            <div class="captcha">
+                <div class="imgContainer">
+                    <img src="" id="imgCaptcha" border="0">
+                </div>
+                <a href="javascript:void(0);" class="reload">
+
+                    <img src="@appPath/Contents/Admin/images/refresh-icon.png">
+                </a>
+            </div>
+            @Html.TextBoxFor(m => m.Captcha, new { @placeholder = "Security Code" })
+            @Html.ValidationMessageFor(m => m.Captcha)
+            @Html.ValidationMessage("Id", new { @style = "color:red" })
+            <div class="padding10"></div>
+            <a href="@appPath/Admin/Login/ForgetPassword">Forget my password?</a>
+            <input type="submit" class="submitBtn" value="Login">
+        }
+    </div>
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript" src="@BundleTable.Bundles.ResolveBundleUrl("~/login-indexjs")">
+
+    </script>
+    @*<script type="text/javascript">
+            var apppath = '@ApplicationInstance.Application["ApplicationPath"]';
+        </script>*@
+}
+
+@section Popup{
+    @if (ViewBag.LogDetails != null)
+    {
+        <div id="ForceLoginPopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+
+            <div class="modal-dialog">
+                <div class="modal-content deletealert">
+                    <div class="modal-header" style="text-align:center;">
+                        <div class="title">Login</div>
+                        <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container" style="text-align:center;">
+                            <p>
+                                Same User is logged in with different terminal/browser or didnt logged out properly.
+                                <br />
+                                <br />
+                                Do you wish to logged out different opened session and continue?
+                            </p>
+                            <div class="padding10"></div>
+                            @using (Html.BeginForm("ForceLogin", "Login", FormMethod.Post, new { id = "ForceLoginForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("EncDetail", (object)Convert.ToString(ViewBag.LogDetails))
+                                <div class="field"></div>
+                                <div style="text-align: center;">
+                                    <a href="javascript:void(0);" class="commonBtn" id="yes">
+                                        <input type="button" class="commonBtn" value="Yes">
+                                    </a> &nbsp; &nbsp;
+                                    <a href="@appPath/Admin" class="commonBtn" id="no"><input type="button" class="commonBtn" value="No"></a>
+                                </div>
+                            }
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    }
+}

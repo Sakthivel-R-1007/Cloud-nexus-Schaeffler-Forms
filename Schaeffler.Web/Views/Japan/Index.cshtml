@@ -1,0 +1,262 @@
+﻿@{
+    ViewBag.Title = "JP";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model feedback
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>ドイツ製純正品質スペアパーツ</h1>
+            <p>自動車アフターマーケットにおけるオーダーメイドソリューション</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>シェフラーの自動車アフターマーケット部門では純正品質の革新的な修理ソリューションを提供しています。LuK、INA、FAGの３つのブランドのもと、乗用車、軽自動車、商用車、トラクターの修理に対応する純正品質の幅広い解決策を用意しています。</p>
+    </div>
+    <div class="grids">
+        <ul class="top">
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/luk-logo.jpg" alt="LuK Clutches"></div>
+                <h2>Lukクラッチ</h2>
+                <p>LuKは50年以上にわたり、自動車業界内での卓越した革新的なパートナーです。</p>
+                <p>トランスミッション修理における製品：</p>
+                <ol>
+                    <li>LuKデュアルマスフライホイール（DMF）</li>
+                    <li>LuK修理キット(RepSet, RepSet DMF, RepSet 2CT)</li>
+                    <li>LuK油圧リリースシステム（リリースベアリング、スレーブシリンダー、マスターシリンダー）</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/luk-img.jpg" alt="LuK Clutches"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/ina-logo.jpg" alt="INA Engine Parts"></div>
+                <h2>INAエンジン部品</h2>
+                <p>INAはスペアパーツ市場で下記の4つの主要システム向けに多彩な修理ソリューションを提供しています。</p>
+                <p>エンジン修理における製品：</p>
+                <ol>
+                    <li>冷却系パーツ：INAウォーターポンプ</li>
+                    <li>補機駆動部（FEAD）：INAオーバーランニングオルタネータープーリー（OAP）、INA FEADキット</li>
+                    <li>タイミングベルト：INAタイミングベルトキット（ウォーターポンプ付きまたは単体）</li>
+                    <li>バルブトレイン：INAフィンガーフォロア、INAタペット</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/ina-img.jpg" alt="INA Engine Parts"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/fag-logo.jpg" alt="FAG Wheel Bearings"></div>
+                <h2>FAGホイールベアリング</h2>
+                <p>FAGは品質と革新性に誇り高い伝統を持ち、ベアリング技術における先駆者です。</p>
+                <p>シャーシ修理における製品：</p>
+                <ol>
+                    <li>FAGホイールベアリング（第一世代から第三世代まで）</li>
+                    <li>FAGステアリング・サスペンションパーツ（ボールジョイント、トラックコントロールアーム等）</li>
+                    <li>FAG SmartSET</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Wheel Bearings"></div>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li><div class="image"><img src="@appPath/Contents/images/luk-img.jpg" alt="LuK Clutches"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/ina-img.jpg" alt="INA Engine Parts"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Wheel Bearings"></div></li>
+        </ul>
+    </div>
+
+    <div class="padding10"></div>
+
+    <div class="contactUs">
+        <div class="container">
+            <h1>詳細につきましては、下記をご記入の上お問い合わせください。</h1>
+            @using (Html.BeginForm("Index", "Japan", FormMethod.Post, new { id = "contactForm" }))
+            {
+                <div class="col_2">
+                    <span class="fieldName">名前*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.FullName, new { @id = "FullName" })
+                        @Html.ValidationMessageFor(m => m.FullName)
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">Eメールアドレス*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">会社名*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.CompanyName)
+                        @Html.ValidationMessageFor(m => m.CompanyName)
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">電話番号*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.PhoneNumber)
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                    </span>
+                </div>
+                <div class="col_2">
+                    <span class="fieldName">どのブランド／サービスに関心がありますか？*</span>
+                    <span>
+
+
+                        @if (ViewBag.BrandServices != null)
+                        {
+                            List<BrandService> brandServices = (List<BrandService>)ViewBag.BrandServices;
+                            int i = 0;
+                            foreach (BrandService BS in brandServices)
+                            {
+                                if (i == 0 || i == 2)
+                                {
+                                    <text><ul class="half">
+                                    </text>
+
+                                }
+
+                                <li>
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="width:110px;">
+                                                <label class="checkBoxStyle">
+                                                    @BS.JP_Name
+                                                    <input type="checkbox" class="BrandServiceClass" value="@BS.Id" name="BrandService[@i].Id">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="BrandService[@i].Name" class="" placeholder="詳しく教えてください">
+                                                @Html.ValidationMessage("BrandService[" + i + "].Name")
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                i++;
+                                if (i == 0 || i == 2)
+                                {
+                                    @Html.Raw("</ul>")
+
+                                }
+                            }
+                        }
+
+                        <input type="hidden" name="BrandServices" id="BrandServices" />
+                        @Html.ValidationMessage("BrandServices")
+
+                        @*<label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                </span>
+            </div>
+            <div class="col_2 last">
+                <span class="fieldName">どのカテゴリーについて関心がありますか？*</span>
+                <span>
+                    @if (ViewBag.VehicleTypes != null)
+                    {
+                        List<VehicleType> vehicleTypes = (List<VehicleType>)ViewBag.VehicleTypes;
+                        int i = 0;
+                        foreach (VehicleType BS in vehicleTypes)
+                        {
+                            if (i == 0 || i == 2)
+                            {
+                                <text><ul class="half">
+                                </text>
+
+                            }
+                            <li>
+                                <label class="checkBoxStyle">
+                                    @BS.JP_Name
+                                    <input type="checkbox" class="vehicleTypesclass" value="@BS.Id" name="VehicleType[@i].Id">
+
+                                    <span class="checkmark"></span>
+                                </label>
+                                <input type="hidden" name="VehicleType[@i].Name" value="@BS.JP_Name">
+                            </li>
+                            i++;
+                            if (i == 0 || i == 2)
+                            {
+                                @Html.Raw("</ul>")
+
+                            }
+                        }
+                    }
+                    <input type="hidden" name="VehicleTypes" id="VehicleTypes" />
+                    @Html.ValidationMessage("VehicleTypes")
+
+            </span>
+        </div>
+        <div class="col w700px">
+            <span class="fieldName">どのような情報に関心がありますか？*</span>
+            <span>
+
+
+                @if (ViewBag.InformationTypes != null)
+                {
+                    List<InformationType> informationTypes = (List<InformationType>)ViewBag.InformationTypes;
+                    int i = 0;
+                    foreach (InformationType BS in informationTypes)
+                    {
+                        if (i == 0 || i == 2)
+                        {
+                            <text><ul class="half">
+                            </text>
+                        }
+                        <li>
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="width:170px;">
+                                        <label class="checkBoxStyle">
+                                            @BS.JP_Name
+                                            <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="InformationType[@i].Name" class="" placeholder="詳しく教えてください">
+                                        @Html.ValidationMessage("InformationType[" + i + "].Name")
+
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        i++;
+                        if (i == 0 || i == 2)
+                        {
+                            @Html.Raw("</ul>")
+
+                        }
+                    }
+
+                }
+                <input type="hidden" name="InformationTypes" id="InformationTypes" />
+                @Html.ValidationMessage("InformationTypes")
+
+
+        </span>
+    </div>
+    <div class="col">
+        <span class="fieldName">その他のお問い合わせ</span>
+        <span>@Html.TextAreaFor(m => m.Message)</span>
+    </div>
+    @*<input type="submit" class="submitBtn" value="送信">*@
+    <a class="submitBtn" href="javascript:void(0)" style="text-decoration: none;">送信</a>
+}
+        </div>
+    </div>
+</div>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+<script src="@appPath/Contents/scripts/contactUsJP.js"></script>
+<script>
+
+    $(function () {
+
+        $("#FullName").keypress(function () {
+            $(".formSubmitMsg").hide();
+        });
+
+    });
+</script>
+

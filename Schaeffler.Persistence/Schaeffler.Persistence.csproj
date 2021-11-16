@@ -86,7 +86,11 @@
   <ItemGroup>
     <Compile Include="DBConnectionFactory\DbConnectionFactory.cs" />
     <Compile Include="Implementation\FeedbackDao.cs" />
+    <Compile Include="Implementation\UserAccountDao.cs" />
+    <Compile Include="Implementation\UserDao.cs" />
     <Compile Include="Interface\IFeedbackDao.cs" />
+    <Compile Include="Interface\IUserAccountDao.cs" />
+    <Compile Include="Interface\IUserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

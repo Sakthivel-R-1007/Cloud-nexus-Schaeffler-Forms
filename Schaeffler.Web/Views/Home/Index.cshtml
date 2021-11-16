@@ -76,7 +76,7 @@
             </ol>
             <p><strong>Daftar sekarang gratis di <a href="https://www.repxpert.com/" target="_blank">www.repxpert.com</a></strong></p>
         </div>
-        <div class="right"><a href="https://www.repxpert.com/" target="_blank"><img src="images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
+        <div class="right"><a href="https://www.repxpert.com/" target="_blank"><img src="@appPath/Contents/images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
     </div>
     <div class="contactUs">
         <div class="container">
@@ -86,7 +86,7 @@
                 <div class="col_2">
                     <span class="fieldName">Nama lengkap*</span>
                     <span>
-                        @Html.TextBoxFor(m => m.FullName)
+                        @Html.TextBoxFor(m => m.FullName, new { @id = "FullName" })
                         @Html.ValidationMessageFor(m => m.FullName)
                         @*<input type="text" name="fullName">
                             <label class="error" style="display:block;">Bagian ini diperlukan</label>*@
@@ -113,7 +113,7 @@
                 <div class="col_2 last">
                     <span class="fieldName">Nomor telepon*</span>
                     <span>
-                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "numeric" })
+                        @Html.TextBoxFor(m => m.PhoneNumber)
                         @Html.ValidationMessageFor(m => m.PhoneNumber)
                         @*<input type="text" name="phoneNumber">
                             <label class="error" style="display:block;">Silahkan masukkan nomor telepon yang benar </label>*@
@@ -148,7 +148,7 @@
                                                 </label>
                                             </td>
                                             <td>
-                                                <input type="text" name="BrandService[@i].Name" class="required" placeholder="Sebutkan">
+                                                <input type="text" name="BrandService[@i].Name" class="" placeholder="Sebutkan">
                                                 @Html.ValidationMessage("BrandService[" + i + "].Name")
                                             </td>
                                         </tr>
@@ -233,7 +233,7 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <input type="text" name="InformationType[@i].Name" class="required" placeholder="Sebutkan">
+                                        <input type="text" name="InformationType[@i].Name" class="" placeholder="Sebutkan">
                                         @Html.ValidationMessage("InformationType[" + i + "].Name")
 
 
@@ -279,3 +279,13 @@
 <script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
 <script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
 <script src="@appPath/Contents/scripts/contactUsID.js"></script>
+<script>
+
+    $(function () {
+
+        $("#FullName").keypress(function () {
+            $(".formSubmitMsg").hide();
+        });
+
+    });
+</script>

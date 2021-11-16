@@ -1,0 +1,98 @@
+﻿
+@{
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model feedback
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Schaeffler</title>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="border:1px solid #dbdad8">
+        <tr>
+            <td style="padding:10px;">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td align="center" style="padding:5px 0 10px 0;border-bottom:1px solid #dddddd;"><img src="@appPath/Contents/images/emaillogo.jpg" border="0" style="width:200px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px 10px 10px 10px;">
+                            <span style="font-size:18px;line-height:22px;color:#646464;font-weight:700;font-family:Arial, Verdana, Helvetica, sans-serif">Contact Us</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;font-size:14px;line-height:18px;color:#000000;font-weight:400;font-family:Arial, Verdana, Helvetica, sans-serif">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>名前</strong></td>
+                                    <td valign="top" style="padding:5px;">@(Model.FullName != null? Model.FullName:"")</td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>Eメールアドレス</strong></td>
+                                    <td valign="top" style="padding:5px;"><a href="mailt:@(Model.Email != null? Model.Email:"")" style="color:#007cc2;">@(Model.Email != null? Model.Email:"")</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>会社名</strong></td>
+                                    <td valign="top" style="padding:5px;">@(Model.CompanyName != null? Model.CompanyName : "")</td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>電話番号</strong></td>
+                                    <td valign="top" style="padding:5px;">@(Model.PhoneNumber != null? Model.PhoneNumber : "")</td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>どのブランド／サービスに関心がありますか?</strong></td>
+                                    <td valign="top" style="padding:5px;">
+
+                                        @if (Model.BrandService != null)
+                                        {
+                                            foreach (BrandService BS in Model.BrandService)
+                                            {
+                                                @BS.Id_Name <br /> @BS.Name <br />
+                                            }
+                                        }
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>どのカテゴリーについて関心がありますか?</strong></td>
+                                    <td valign="top" style="padding:5px;">
+                                        @if (Model.VehicleType != null)
+                                        {
+                                            var products = String.Join(",", Model.VehicleType.Select(p => p.Id_Name));
+                                            @products
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>どのような情報に関心がありますか?</strong></td>
+                                    <td valign="top" style="padding:5px;">
+                                        @if (Model.InformationType != null)
+                                        {
+                                            foreach (InformationType BS in Model.InformationType)
+                                            {
+                                                @BS.Id_Name <br />@BS.Name <br />
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" valign="top" style="padding:5px;"><strong>その他のお問い合わせ</strong></td>
+                                    <td valign="top" style="padding:5px;">@(Model.Message != null? Model.Message : "-")</td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+

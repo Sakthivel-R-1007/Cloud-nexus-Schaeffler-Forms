@@ -197,6 +197,34 @@ namespace Schaeffler.Persistence.Implementation
 
         }
 
+        public ReportModelView GetFeedbackReportNew()
+        {
+            ReportModelView report = new ReportModelView();
+            List<feedback> feedback = null;
+            DynamicParameters param = new DynamicParameters();
+
+            using (IDbConnection conn = factory.GetConnection())
+            {
+                conn.Open();
+                string SQL = @"[GetFeedBackReportNew]";
+                var contents = conn.QueryMultiple(SQL, param, commandType: CommandType.StoredProcedure);
+                if (contents != null)
+                {
+                    feedback = contents.Read<feedback>().ToList();
+                    if (feedback != null)
+                    {
+                        report.Feedback = feedback;
+
+                        report.BrandService = contents.Read<BrandService>().ToList();
+                        report.VehicleType = contents.Read<VehicleType>().ToList();
+                        report.InformationType = contents.Read<InformationType>().ToList();
+                    }
+                }
+            }
+            return report;
+
+        }
+
 
     }
 }
