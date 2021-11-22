@@ -334,7 +334,7 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
                     StringBuilder contents = new StringBuilder();
                     contents.Append(RenderRazorViewToString("_EDMPasswordChangedAcknowledge", FP.user));
 
-                    if (_utilityService.SendEmail("BEST MOTOR- Reset Forgot Password", contents.ToString(), FP.user.Email, true, null) == "success")
+                    if (_utilityService.SendEmail("SCHAEFFLER- Reset Forgot Password", contents.ToString(), FP.user.Email, true, null) == "success")
                     {
                         ViewBag.Success = "Password updated successfully";
                     }

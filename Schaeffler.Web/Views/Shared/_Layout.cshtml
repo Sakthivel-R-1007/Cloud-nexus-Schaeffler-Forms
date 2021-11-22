@@ -36,14 +36,14 @@
     <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
     <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173385004-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173385004-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        gtag('config', 'UA-173385004-1');
-    </script>
+            gtag('config', 'UA-173385004-1');
+        </script>*@
 
     <script src="@appPath/Contents/scripts/common.js"></script>
 </head>
@@ -77,10 +77,10 @@
                 <p><strong>Terhubung dengan kami</strong></p>
             }
             <ul>
-                <li><a href="https://www.facebook.com/SchaefflerAsiaPacific/" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
+                <li><a href="https://www.facebook.com/SchaefflerJapan" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
                 <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
                 <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
-                <li><a href="https://www.youtube.com/user/SchaefflerGlobal" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PL_BavLIXGWzAMbrCm3GK0OCw0pB6ZDGu8" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
                 <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
             </ul>
 
@@ -88,9 +88,11 @@
 
                 @if (ViewBag.Title != null && ViewBag.Title == "JP")
                 {
-                    <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">
+                    <a href="https://www.schaeffler.co.jp/content.schaeffler.jp/ja/meta/privacy-policy/index.jsp" target="_blank">
 
-                        プライバシーポリシー | 免責事項
+                        プライバシーポリシー
+                        <span>|</span> <a href="https://www.schaeffler.co.jp/content.schaeffler.jp/ja/meta/legal-notice/index.jsp" target="_blank">免責事項</a>
+
                     </a>
                 }
                 else
@@ -99,7 +101,6 @@
                         Privacy policy
                     </a>
                 }
-                <span>|</span> <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/legal-notice/index.jsp" target="_blank">Legal notice</a>
             </p>
         </div>
     </footer>
