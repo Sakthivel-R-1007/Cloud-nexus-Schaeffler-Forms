@@ -1,0 +1,401 @@
+﻿@{
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model feedback
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Schaeffler</title>
+    <link rel="shortcut icon" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/addresser/favicon/favicon.ico" type="image/ico" />
+    <!-- iOS/ANDROID TOUCH-ICONS -->
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" href="https://www.schaeffler.sg/remotemedien/media/_shared_media/technik/images/rwd_media_images/icons_4/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/responsive.css" media="all" />
+    <!--[if lt IE 9]>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+    <!--[if !(IE)|(gte IE 9)]><!-->
+    <script src="@appPath/Contents/scripts/jquery-3.4.1.min.js"></script>
+    <!--<![endif]-->
+    <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
+    <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
+    <!-- Event snippet for Website lead conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-10803442859/o3LXCKjapoEDEKvpvZ8o',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '439311276671531');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=439311276671531&ev=PageView
+&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213710887-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-213710887-1');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRXJ83L7Z7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FRXJ83L7Z7');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 10803442859 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10803442859"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-10803442859');</script>
+
+    <script src="@appPath/Contents/scripts/common.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="companyLogo"><img src="@appPath/Contents/images/logo.jpg" alt="Schaeffler"></div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="mainContents">
+            <div class="bannerImg">
+                <img src="@appPath/Contents/images/banner-img.jpg">
+                <div class="bannerTexts">
+                    <h1>독일 기술의 OE 품질 부품</h1>
+                    <p>자동차 애프터마켓 맞춤 솔루션 </p>
+                    <span class="mobileBar"></span>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>셰플러 자동차 애프터마켓 부문은 OE 부품과 동등한 품질로 혁신적인 솔루션을 제공합니다. LuK, INA, FAG,셰플러 TruPower 4개 브랜드가 등록되어 있으며, 승용차, 영업용 차량과 트랙터 정비를 위해 OE 부품과 동일한 품질로 다양한 솔루션을 제공합니다.</p>
+            </div>
+            <div class="grids">
+                <ul class="top col4">
+                    <li>
+                        <div class="logo"><img src="@appPath/Contents/images/luk-logo.jpg" alt="LuK Clutches"></div>
+                        <h2>LuK 트랜스미션 시스템</h2>
+                        <p>LuK는 50년 이상 자동차 업계에서 인정받아온 혁신적인 파트너입니다.</p>
+                        <p>자주 찾는 변속기 정비 제품:</p>
+                        <ol class="last">
+                            <li>LuK 듀얼 매스 플라이휠(DMF)</li>
+                            <li>LuK RepSet 제품군(RepSet, RepSet DMF, RepSet 2CT)</li>
+                            <li>LuK 유압 릴리스 시스템(클러치 베어링, 슬레이브 실린더, 마스터 실린더)</li>
+                        </ol>
+                        <div class="image"><img src="@appPath/Contents/images/luk-img.jpg" alt="LuK Clutches"></div>
+                    </li>
+                    <li>
+                        <div class="logo"><img src="@appPath/Contents/images/ina-logo.jpg" alt="INA Engine Parts"></div>
+                        <h2>INA 엔진 시스템</h2>
+                        <p>INA는 엔진 부품 시장의 전문업체로, 4가지 핵심 시스템에 스마트한 정비 솔루션을 제공합니다.</p>
+                        <p>자주 찾는 엔진 정비 제품:</p>
+                        <ol class="last">
+                            <li>냉각시스템: INA 워터 펌프</li>
+                            <li>겉벨트: INA 알터네이터 풀리(OAP), INA 겉벨트 키트</li>
+                            <li>타이밍 벨트: INA 타이밍 벨트 키트(워터펌프 옵션)</li>
+                            <li>밸브 트레인: INA 밸브 래쉬 INA 태핏</li>
+                        </ol>
+                        <div class="image"><img src="@appPath/Contents/images/ina-img.jpg" alt="INA Engine Parts"></div>
+                    </li>
+                    <li>
+                        <div class="logo"><img src="@appPath/Contents/images/fag-logo.jpg" alt="FAG Wheel Bearings"></div>
+                        <h2>FAG 휠 베어링, 섀시 부품</h2>
+                        <p>FAG는 오랫동안 뛰어난 품질과 혁신을 고수하며 베어링 기술을 선도해왔습니다.</p>
+                        <p>자주 찾는 섀시 정비 제품;</p>
+                        <ol class="last">
+                            <li>FAG 휠 베어링(1~3세대)</li>
+                            <li>FAG 조향 및 서스펜션 부품(FAG 볼 조인트, FAG 트랙 컨트롤 암)</li>
+                            <li>FAG SmartSET 및 FAG 상용차용 인서트 유닛(RIU)</li>
+                        </ol>
+                        <div class="image"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Wheel Bearings"></div>
+                    </li>
+                    <li>
+                        <div class="logo truPower"><img src="@appPath/Contents/images/trupower-logo.jpg" alt="Schaeffler TruPower Coolant"></div>
+                        <h2>셰플러 TruPower 냉각수</h2>
+                        <p>사계절 사용 가능한 장수명 프리미엄 차량 냉각수</p>
+                        <p>셰플러 TruPower 장수명 차량 냉각수는 유기산 기술(OAT)로 특별하게 제조되었습니다. 부식 억제 기술이 포함되어 방열 효과를 개선하고 어떤 환경 조건에서도 엔진 온도를 적절하게 제어하도록 도움을 줍니다.</p>
+                        <p>권장 사용법: </p>
+                        <ol>
+                            <li>승용차/트럭/버스/트랙터/영업용 차량 등 모든 자동차 라디에이터에 사용합니다.</li>
+                            <li>별도의 물을 주입할 필요가 없습니다.</li>
+                        </ol>
+                        <p>제품 종류: </p>
+                        <ol class="last">
+                            <li>장수명 차량 냉각수(레드)</li>
+                            <li>장수명 차량 냉각수(블루)</li>
+                            <li>장수명 차량 냉각수(핑크)</li>
+                        </ol>
+                        <div class="image"><img src="@appPath/Contents/images/trupower-img.jpg" alt="Schaeffler TruPower Coolant"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="paragraph">
+                <p>셰플러 REPXPERT – 정비소의 일상적인 작업을 지원하는 올인원 포털.</p>
+            </div>
+            <div class="boxContent">
+                <div class="left">
+                    <div class="logo"><img src="@appPath/Contents/images/REPXPERT_logo.jpg" alt="REPXPERT"></div>
+                    <h1>작업. 학습. 정보.</h1>
+                    <ol>
+                        <li>모든 셰플러 제품 정보를 빠르고 간편하게 이용</li>
+                        <li>변속기, 엔진, 섀시 설명 영상</li>
+                        <li>설치 설명서 및 기술 안내서</li>
+                    </ol>
+                    <p><strong>무료 등록하기: <a href="https://www.repxpert.com/" target="_blank">www.repxpert.com</a></strong></p>
+                </div>
+                <div class="right"><a href="https://www.repxpert.com/" target="_blank"><img src="@appPath/Contents/images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
+            </div>
+            <div class="contactUs">
+                <div class="container">
+                    <h1>상세 정보 문의하기</h1>
+                    @using (Html.BeginForm("Index", "Korea", FormMethod.Post, new { id = "contactForm" }))
+                    {
+                        <div class="col_2">
+                            <span class="fieldName">성명*</span>
+                            <span>
+                                @Html.TextBoxFor(m => m.FullName, new { @id = "FullName" })
+                                @Html.ValidationMessageFor(m => m.FullName)
+                            </span>
+                        </div>
+                        <div class="col_2 last">
+                            <span class="fieldName">이메일 주소*</span>
+                            <span>
+                                @Html.TextBoxFor(m => m.Email)
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </span>
+                        </div>
+                        <div class="col_2">
+                            <span class="fieldName">회사명*</span>
+                            <span>
+                                @Html.TextBoxFor(m => m.CompanyName)
+                                @Html.ValidationMessageFor(m => m.CompanyName)
+                            </span>
+                        </div>
+                        <div class="col_2 last">
+                            <span class="fieldName">전화번호*</span>
+                            <span>
+                                @Html.TextBoxFor(m => m.PhoneNumber)
+                                @Html.ValidationMessageFor(m => m.PhoneNumber)
+                            </span>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col_2">
+                            <span class="fieldName">문의할 브랜드/서비스*</span>
+                            <span>
+
+
+                                @if (ViewBag.BrandServices != null)
+                                {
+                                    List<BrandService> brandServices = (List<BrandService>)ViewBag.BrandServices;
+                                    int i = 0;
+                                    foreach (BrandService BS in brandServices)
+                                    {
+                                        if (BS.JP_Name != "REPXPERT")
+                                        {
+                                            if (i == 0 || i == 2)
+                                            {
+                                                <text><ul class="half">
+                                                </text>
+
+                                            }
+
+                                            <li>
+                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                    <tr>
+                                                        <td style="width:110px;">
+                                                            <label class="checkBoxStyle">
+                                                                @BS.JP_Name
+                                                                <input type="checkbox" class="BrandServiceClass" value="@BS.Id" name="BrandService[@i].Id">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" name="BrandService[@i].Name" class="" placeholder="자세히 기재해 주십시오">
+                                                            @Html.ValidationMessage("BrandService[" + i + "].Name")
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            i++;
+                                            if (i == 0 || i == 2)
+                                            {
+                                                @Html.Raw("</ul>")
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                                <input type="hidden" name="BrandServices" id="BrandServices" />
+                                @Html.ValidationMessage("BrandServices")
+
+                                @*<label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                        </span>
+
+                    </div>
+                    <div class="col_2 last">
+                        <span class="fieldName">자세히 기재해 주십시오</span>
+                        <span>
+                            @if (ViewBag.VehicleTypes != null)
+                            {
+                                List<VehicleType> vehicleTypes = (List<VehicleType>)ViewBag.VehicleTypes;
+                                int i = 0;
+                                foreach (VehicleType BS in vehicleTypes)
+                                {
+                                    if (i == 0 || i == 2)
+                                    {
+                                        <text><ul class="half">
+                                        </text>
+
+                                    }
+                                    <li>
+                                        <label class="checkBoxStyle">
+                                            @BS.KR_Name
+                                            <input type="checkbox" class="vehicleTypesclass" value="@BS.Id" name="VehicleType[@i].Id">
+
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <input type="hidden" name="VehicleType[@i].Name" value="@BS.KR_Name">
+                                    </li>
+                                    i++;
+                                    if (i == 0 || i == 2)
+                                    {
+                                        @Html.Raw("</ul>")
+
+                                    }
+                                }
+                            }
+                            <input type="hidden" name="VehicleTypes" id="VehicleTypes" />
+                            @Html.ValidationMessage("VehicleTypes")
+
+                    </span>
+                </div>
+                <div class="col w700px">
+                    <span class="fieldName">셰플러에서 받고 싶으신 정보*</span>
+                    <span>
+
+
+                        @if (ViewBag.InformationTypes != null)
+                        {
+                            List<InformationType> informationTypes = (List<InformationType>)ViewBag.InformationTypes;
+                            int i = 0;
+                            foreach (InformationType BS in informationTypes)
+                            {
+                                if (i == 0 || i == 2)
+                                {
+                                    <text><ul class="half">
+                                    </text>
+                                }
+                                <li>
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="width:170px;">
+                                                <label class="checkBoxStyle">
+                                                    @BS.KR_Name
+                                                    <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="InformationType[@i].Name" class="" placeholder="자세히 기재해 주십시오">
+                                                @Html.ValidationMessage("InformationType[" + i + "].Name")
+
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                i++;
+                                if (i == 0 || i == 2)
+                                {
+                                    @Html.Raw("</ul>")
+
+                                }
+                            }
+
+                        }
+                        <input type="hidden" name="InformationTypes" id="InformationTypes" />
+                        @Html.ValidationMessage("InformationTypes")
+
+
+                </span>
+            </div>
+            <div class="col">
+                <span class="fieldName">기타 남기고 싶은 말</span>
+                <span>@Html.TextAreaFor(m => m.Message)</span>
+            </div>
+            <a class="submitBtn" href="javascript:void(0)" style="text-decoration: none;">보내기</a>
+        }
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p><strong>문의하기</strong></p>
+            <ul>
+                <li><a href="https://www.facebook.com/SchaefflerKorea" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
+                <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
+                <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
+                <li><a href="https://youtube.com/playlist?list=PL_BavLIXGWzBDc_ejSHSshj0Js1FANiqw" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
+                <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
+            </ul>
+
+            <p class="policy"><a href="https://www.schaeffler.kr/content.schaeffler.kr/ko/meta/privacy-policy/index.jsp" target="_blank">개인정보 보호 정책</a> <span>|</span> <a href="https://www.schaeffler.kr/content.schaeffler.kr/ko/meta/legal-notice/index.jsp" target="_blank">법적 고지</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+<script src="@appPath/Contents/scripts/contactUsKR.js"></script>
+<script>

@@ -13,6 +13,8 @@ namespace Schaeffler.Domain
         public string Id_Name { get; set; }
         public string TH_Name { get; set; }
         public string JP_Name { get; set; }
+        public string KR_Name { get; set; }
+        public string AU_Name { get; set; }
         public  string BrandName { get; set; }
 
 
@@ -25,6 +27,9 @@ namespace Schaeffler.Domain
         public string Msg3 { get; set; }
         public string REPXPERT { get; set; }
         public string Msg4 { get; set; }
+
+        public string TruPower { get; set; }
+        public string Msg5 { get; set; }
 
 
     }

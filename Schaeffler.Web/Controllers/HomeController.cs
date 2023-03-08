@@ -366,7 +366,7 @@ namespace Schaeffler.Web.Controllers
                     string range = "A1:B2";
 
 
-                    ReportModelView report = _feedbackDao.GetFeedbackReportNew();
+                    ReportModelView report = _feedbackDao.GetFeedbackReportNew(null);
                     if (report != null)
                     {
 

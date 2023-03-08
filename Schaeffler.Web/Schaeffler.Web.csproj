@@ -285,8 +285,10 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Controllers\AustraliaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JapanController.cs" />
+    <Compile Include="Controllers\KoreaController.cs" />
     <Compile Include="Filters\AuthenticationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -382,10 +384,13 @@
     <Content Include="Contents\images\right-img.jpg" />
     <Content Include="Contents\images\Schaeffler_logo.png" />
     <Content Include="Contents\images\select-icon.png" />
+    <Content Include="Contents\images\trupower-img.jpg" />
+    <Content Include="Contents\images\trupower-logo.jpg" />
     <Content Include="Contents\scripts\browser_detect.js" />
     <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\contactUsEN.js" />
     <Content Include="Contents\scripts\contactUsJP.js" />
+    <Content Include="Contents\scripts\contactUsKR.js" />
     <Content Include="Contents\scripts\contactUsTH.js" />
     <Content Include="Contents\scripts\contactUsID.js" />
     <Content Include="Contents\scripts\jquery-1.12.1.js" />
@@ -452,6 +457,12 @@
     <Content Include="Views\Japan\Index.cshtml" />
     <Content Include="Views\Japan\Index_JP_ThankYou.cshtml" />
     <Content Include="Views\Shared\_feedbackform_jp.cshtml" />
+    <Content Include="Views\Korea\Index.cshtml" />
+    <Content Include="Views\Korea\Index_KR_ThankYou.cshtml" />
+    <Content Include="Views\Shared\_feedbackform_kr.cshtml" />
+    <Content Include="Views\Australia\Index_AU_ThankYou.cshtml" />
+    <Content Include="Views\Australia\Index.cshtml" />
+    <Content Include="Views\Shared\_feedbackform_au.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

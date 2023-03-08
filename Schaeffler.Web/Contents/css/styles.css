@@ -47,7 +47,8 @@ input[type="submit"]{border:none;-webkit-appearance:none !important;-moz-appeara
 /**Header**/
 header{width:100%;;background:#ffffff;position:relative}
 header .container{width:95%;max-width:1200px;margin:0 auto;}
-header .container .companyLogo{width:200px;float:right;margin:22px 0;}
+/*header .container .companyLogo{width:200px;float:right;margin:22px 0;}*/
+header .container .companyLogo {width: 200px;float: right;padding: 25px;}
 header .container .companyLogo img{display:block;width:100%;}
 /**Wrapper & Main Contents**/
 .wrapper{width:100%;position:relative;overflow:hidden;}
@@ -69,12 +70,19 @@ header .container .companyLogo img{display:block;width:100%;}
 .grids ul li p{font-size:14px;line-height:22px;color:#646464;margin-bottom:10px;}
 .grids ul li .logo{width:50px;margin-bottom:10px;}
 .grids ul li .logo img{display:block;width:100%;}
+.grids ul li .logo.truPower {width: 83px;}
 .grids ul li .image{width:100%;margin-bottom:10px;}
+.grids ul li .logo.truPower{width:83px;}
 .grids ul li .image img{display:block;width:100%;}
 .grids ul li ol{font-size:14px;line-height:22px;color:#646464;width:calc(100% - 20px);margin-left:20px;}
 .grids ul li ol li{width:100%;font-weight:400;border-bottom:none !important;margin:0;display:block;border:none;margin:0;padding:2.5px 0;}
 .grids ul li ol li::before{content:"\2022";color:#00893d;font-weight: bold;display:inline-block;width:1em;margin-left:-1em;}
 .grids ul li .mobile{display:none;}
+.grids ul.col4 {width: calc(100% + 10px);}
+.grids ul.col4 li {width: calc(25% - 52px);position: relative;margin: 0 10px 0 0;border: 1px solid #ced5da !important;}
+.grids ul.col4 li .image {position: absolute;bottom: 0;left: 0;}
+.grids ul.col4 li ol.last {padding-bottom: 170px;}
+.grids ul.col4 li ol li {width: 100%;border: none !important;}
 .boxContent{width:calc(95% - 2px);max-width:1198px;margin:20px auto 30px auto;position:relative;font-size:0;border:1px solid #ced5da;}
 .boxContent .left{display:inline-block;vertical-align:top;width:calc(100% - 464px);padding:20px;}
 .boxContent .left .logo{width:150px;margin-bottom:15px;}
@@ -115,3 +123,5 @@ footer .container ul li img{width:100%;display:block;}
 footer .container p.policy{font-size:13px;line-height:19.5px;position:absolute;right:0;top:32.5px;}
 footer .container p.policy a{color:#646464;text-decoration:none;}
 footer .container p.policy span{display:inline-block;padding:0 5px;}
+.twoLineCheck tr td {vertical-align: middle !important;}
+.twoLineCheck tr td .checkmark {top: 10px;}

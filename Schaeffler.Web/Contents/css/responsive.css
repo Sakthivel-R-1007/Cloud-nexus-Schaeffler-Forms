@@ -5,6 +5,8 @@
 	.contactUs .container ul.half{padding-bottom:0;}
 	.contactUs .container .last ul.half{padding:0;margin-bottom:0;}
 	.contactUs .container .col.w700px{width:500px;}
+	.grids ul.col4 li {width: calc(50% - 52px);margin-bottom: 10px;}
+	.grids ul.col4 li ol.last {padding-bottom: 250px;}
 }
 @media screen and (max-width:960px){
 	.boxContent .left{display:block;width:calc(100% - 40px);}
@@ -20,6 +22,10 @@
 	.grids ul.top li{border-bottom:1px solid #ced5da;}
 	.contactUs .container .col_2{display:block;width:100%;padding-right:0;}
 	.contactUs .container .col_2.last{padding-left:0;}
+	.grids ul.col4 li {width: calc(100% - 52px);}
+	.grids ul.col4 li ol.last {padding-bottom: 0;}
+	.grids ul.col4 li:last-child {margin: 0 10px 10px 0;}
+	.grids ul.col4 li .image {position: relative;bottom: 0;left: 0;}
 }
 @media screen and (max-width:770px){
 	.bannerImg .bannerTexts{width:calc(100% - 40px);position:relative;top:0;background:#f6f7f8;padding:25px 20px 15px 20px;border-left:none;}

@@ -1,0 +1,360 @@
+﻿@{
+    ViewBag.Title = "AU";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model feedback
+<div class="mainContents">
+    <div class="bannerImg">
+        <img src="@appPath/Contents/images/banner-img.jpg">
+        <div class="bannerTexts">
+            <h1>German OE Quality Spare Parts</h1>
+            <p>Tailor-made solutions for the Automotive Aftermarket</p>
+            <span class="mobileBar"></span>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Schaeffler’s Automotive Aftermarket division delivers innovative repair solutions in original-equipment quality. Under the three brands LuK, INA and FAG, we offer a wide range of solutions in original-equipment quality for the repair of passenger cars, light or commercial vehicles and tractors.</p>
+    </div>
+    <div class="grids">
+        <ul class="top">
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/luk-logo.jpg" alt="Kopling LuK"></div>
+                <h2>LuK Clutches</h2>
+                <p>LuK has been a competent and innovative partner to the automotive industry for more than 50 years.</p>
+                <p>Our popular products for the transmission repair include;</p>
+                <ol>
+                    <li>LuK Dual Mass Flywheel (DMF)</li>
+                    <li>LuK RepSet family (RepSet, RepSet DMF, RepSet 2CT)</li>
+                    <li>LuK Hydraulic Release System (Release Bearing, Concentric Slave Cylinder, Master Cylinder)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/luk-img.jpg" alt="Kopling LuK"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/ina-logo.jpg" alt="Suku Cadang Mesin INA"></div>
+                <h2>INA Engine Parts</h2>
+                <p>INA is the engine specialist on the spare parts market with its intelligent repair solutions for the four key systems. </p>
+                <p>Our popular products for the engine repair include; </p>
+                <ol>
+                    <li>Cooling: INA Water Pump</li>
+                    <li>FEAD: INA Overrunning Alternator Pulley (OAP), INA FEAD KIT</li>
+                    <li>Timing Belt: INA Timing Belt KIT (with or without Water Pump)</li>
+                    <li>Valve Train: INA Finger Follower, INA Tappet</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/ina-img.jpg" alt="Suku Cadang Mesin INA"></div>
+            </li>
+            <li>
+                <div class="logo"><img src="@appPath/Contents/images/fag-logo.jpg" alt="FAG Bantalan Roda"></div>
+                <h2>FAG Wheel Bearings</h2>
+                <p>FAG has a proud tradition of quality and innovation and leads the way in roller bearing technology. </p>
+                <p>Our popular products for the chassis repair include; </p>
+                <ol>
+                    <li>FAG Wheel Bearing (Generation 1 – 3)</li>
+                    <li>FAG Steering and Suspension Parts (FAG Ball Joint, FAG Track Control Arm)</li>
+                    <li>FAG SmartSET and FAG Repair Insert Unit (RIU)</li>
+                </ol>
+                <div class="image mobile"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Bantalan Roda"></div>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li><div class="image"><img src="@appPath/Contents/images/luk-img.jpg" alt="Kopling LuK"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/ina-img.jpg" alt="Suku Cadang Mesin INA"></div></li>
+            <li><div class="image"><img src="@appPath/Contents/images/fag-img.jpg" alt="FAG Bantalan Roda"></div></li>
+        </ul>
+    </div>
+    <div class="paragraph">
+        <p>Schaeffler REPXPERT – The all-in-one portal for garage, to support on your day-to-day work.</p>
+    </div>
+    <div class="boxContent">
+        <div class="left">
+            <div class="logo"><img src="@appPath/Contents/images/REPXPERT_logo.jpg" alt="REPXPERT"></div>
+            <h1>WORK. LEARN. INFORM.</h1>
+            <ol>
+                <li>Quick and easy access to all Schaeffler product information</li>
+                <li>Tutorial videos on transmission, engine and chassis</li>
+                <li>Installation instructions and technical brochures</li>
+            </ol>
+            <p><strong>Sign up now for free at <a href="https://www.repxpert.com.au/" target="_blank">www.repxpert.com.au</a></strong></p>
+        </div>
+        <div class="right"><a href="https://www.repxpert.com.au/" target="_blank"><img src="@appPath/Contents/images/right-img.jpg" alt="" class="desktop"><img src="@appPath/Contents/images/right-img-mobile.jpg" alt="" class="mobile"></a></div>
+    </div>
+    <div class="contactUs">
+        <div class="container">
+            <h1>WANT TO KNOW MORE?</h1>
+            @using (Html.BeginForm("Index", "Australia", FormMethod.Post, new { id = "contactForm" }))
+            {
+                
+                <div class="col_2">
+                    <span class="fieldName">Full Name*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.FullName, new { @id = "FullName" })
+                        @Html.ValidationMessageFor(m => m.FullName)
+                        @*<input type="text" name="fullName">
+                            <label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                    </span>
+                </div>
+                <div class="col_2 last">
+                    <span class="fieldName">Email Address*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email)
+                        @*<input type="text" name="emailAddress">
+                            <label class="error" style="display:block;">Silahkan isi alamat email</label>*@
+                    </span>
+                </div>
+
+
+                <div class="col_2">
+                    <span class="fieldName">Company Name*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.CompanyName)
+                        @Html.ValidationMessageFor(m => m.CompanyName)
+                        @*<input type="text" name="companyName">
+                            <label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                    </span>
+                </div>
+
+                <div class="col_2 last">
+                    <span class="fieldName">Phone Number*</span>
+                    <span>
+                        @Html.TextBoxFor(m => m.PhoneNumber)
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                        @*<input type="text" name="phoneNumber">
+                            <label class="error" style="display:block;">Silahkan masukkan nomor telepon yang benar </label>*@
+                    </span>
+                </div>
+                <div class="clear"></div>
+                <div class="col_2">
+                    <span class="fieldName">Which brand(s)/service(s) is/are you interested in? *</span>
+                    <span>
+
+
+                        @if (ViewBag.BrandServices != null)
+                        {
+                            List<BrandService> brandServices = (List<BrandService>)ViewBag.BrandServices;
+                            int i = 0;
+                            foreach (BrandService BS in brandServices)
+                            {
+                                if (BS.JP_Name != "셰플러 TruPower")
+                                {
+                                    if (i == 0 || i == 2)
+                                    {
+                                        <text><ul class="half">
+                                        </text>
+
+                                    }
+
+                                    <li>
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="width:110px;">
+                                                    <label class="checkBoxStyle">
+                                                        @BS.JP_Name
+                                                        <input type="checkbox" class="BrandServiceClass" value="@BS.Id" name="BrandService[@i].Id">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="BrandService[@i].Name" class="" placeholder="Please specify.">
+                                                    @Html.ValidationMessage("BrandService[" + i + "].Name")
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    i++;
+                                    if (i == 0 || i == 2)
+                                    {
+                                        @Html.Raw("</ul>")
+
+                                    }
+                                }
+                            }
+                        }
+
+                        <input type="hidden" name="BrandServices" id="BrandServices" />
+                        @Html.ValidationMessage("BrandServices")
+
+                        @*<label class="error" style="display:block;">Bagian ini diperlukan</label>*@
+                </span>
+            </div>
+            <div class="col_2 last">
+                <span class="fieldName">For which vehicle type(s) are you interested in?*</span>
+                <span>
+                    @if (ViewBag.VehicleTypes != null)
+                    {
+                        List<VehicleType> vehicleTypes = (List<VehicleType>)ViewBag.VehicleTypes;
+                        int i = 0;
+                        foreach (VehicleType BS in vehicleTypes)
+                        {
+                            if (i == 0 || i == 2)
+                            {
+                                <text><ul class="half">
+                                </text>
+
+                            }
+                            <li>
+                                <label class="checkBoxStyle">
+                                    @BS.Name
+                                    <input type="checkbox" class="vehicleTypesclass" value="@BS.Id" name="VehicleType[@i].Id">
+
+                                    <span class="checkmark"></span>
+                                </label>
+                                <input type="hidden" name="VehicleType[@i].Name" value="@BS.Name">
+                            </li>
+                            i++;
+                            if (i == 0 || i == 2)
+                            {
+                                @Html.Raw("</ul>")
+
+                            }
+                        }
+                    }
+                    <input type="hidden" name="VehicleTypes" id="VehicleTypes" />
+                    @Html.ValidationMessage("VehicleTypes")
+
+            </span>
+        </div>
+        <div class="col w700px">
+            <span class="fieldName">What type of information would you like to receive from us? *</span>
+            <span>
+
+
+                @if (ViewBag.InformationTypes != null)
+                {
+                    List<InformationType> informationTypes = (List<InformationType>)ViewBag.InformationTypes;
+                    int i = 0;
+                    foreach (InformationType BS in informationTypes)
+                    {
+                        if (i == 0 || i == 2)
+                        {
+                            <text><ul class="half">
+                            </text>
+                        }
+                        <li>
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="width:170px;">
+                                        <label class="checkBoxStyle">
+                                            @BS.Name
+                                            <input type="checkbox" class="InformationTypesclass" value="@BS.Id" name="InformationType[@i].Id">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="InformationType[@i].Name" class="" placeholder="Please specify.">
+                                        @Html.ValidationMessage("InformationType[" + i + "].Name")
+
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        i++;
+                        if (i == 0 || i == 2)
+                        {
+                            @Html.Raw("</ul>")
+
+                        }
+                    }
+
+                }
+                <input type="hidden" name="InformationTypes" id="InformationTypes" />
+                @Html.ValidationMessage("InformationTypes")
+
+
+        </span>
+    </div>
+    <div class="col">
+        <span class="fieldName">Any other message</span>
+        @Html.TextAreaFor(m => m.Message)
+
+        <span></span>
+    </div>
+    <a class="submitBtn" href="javascript:void(0)" style="text-decoration: none;">Send</a>
+    @*<input type="submit" class="submitBtn" value="Kirim">*@
+}
+
+            <!-- This will appear once the form have submitted. -->
+            @if (ViewBag.Success != null)
+            {
+                <p class="formSubmitMsg">Kami telah menerima pertanyaan anda dan akan segera menghubungi anda.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/additional-methods.js"></script>
+<script src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+<script src="@appPath/Contents/scripts/contactUsEN.js"></script>
+<script>
+
+    $(function () {
+
+        $("#FullName").keypress(function () {
+            $(".formSubmitMsg").hide();
+        });
+
+    });
+
+</script>
+<!-- Event snippet for Website lead conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10803442859/o3LXCKjapoEDEKvpvZ8o',
+            'event_callback': callback
+        });
+        return false;
+    }
+</script>
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '439311276671531');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1"
+         src="https://www.facebook.com/tr?id=439311276671531&ev=PageView
+&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-213687291-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-213687291-1');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ9ZH7XQTH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HJ9ZH7XQTH');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 10803442859 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10803442859"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-10803442859');</script>

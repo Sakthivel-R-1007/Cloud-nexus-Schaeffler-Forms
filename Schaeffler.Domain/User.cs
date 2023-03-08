@@ -26,5 +26,7 @@ namespace Schaeffler.Domain
 
         public bool LastLoginStatus { get; set; }
         public Guid SessionId { get; set; }
+
+        public string Country { get; set; }
     }
 }

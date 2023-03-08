@@ -109,6 +109,8 @@
                             int i = 0;
                             foreach (BrandService BS in brandServices)
                             {
+                                //if (BS.AU_Name != "셰플러 TruPower")
+                                //{
                                 if (i == 0 || i == 2)
                                 {
                                     <text><ul class="half">
@@ -139,6 +141,7 @@
                                     @Html.Raw("</ul>")
 
                                 }
+                                //}
                             }
                         }
 
@@ -259,11 +262,27 @@
 
     });
 </script>
+<!-- Event snippet for Website lead conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10803442859/o3LXCKjapoEDEKvpvZ8o',
+            'event_callback': callback
+        });
+        return false;
+    }
+</script>
 <script>
     !function (f, b, e, v, n, t, s) {
         if (f.fbq) return; n = f.fbq = function () {
             n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
         };
         if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
         n.queue = []; t = b.createElement(e); t.async = !0;
@@ -301,4 +320,19 @@
 
     gtag('config', 'AW-10803442859');
 </script>
-
+<!-- Event snippet for Website lead conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10803442859/o3LXCKjapoEDEKvpvZ8o',
+            'event_callback': callback
+        });
+        return false;
+    }
+</script>

@@ -72,18 +72,34 @@
             {
                 <p><strong>お問い合わせ</strong></p>
             }
+            else if (ViewBag.Title != null && ViewBag.Title == "AU")
+            {
+                <p><strong>Connect with Us</strong></p>
+            }
             else
             {
                 <p><strong>Terhubung dengan kami</strong></p>
             }
-            <ul>
-                <li><a href="https://www.facebook.com/SchaefflerJapan" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
-                <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
-                <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
-                <li><a href="https://www.youtube.com/playlist?list=PL_BavLIXGWzAMbrCm3GK0OCw0pB6ZDGu8" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
-                <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
-            </ul>
-
+            @if (ViewBag.Title != null && ViewBag.Title == "JP")
+            {
+                <ul>
+                    <li><a href="https://www.facebook.com/SchaefflerJapan" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
+                    <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
+                    <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL_BavLIXGWzAMbrCm3GK0OCw0pB6ZDGu8" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
+                    <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
+                </ul>
+            }
+            else
+            {
+                <ul>
+                    <li><a href="https://www.facebook.com/repxpert.com.au" target="_blank"><img src="@appPath/Contents/images/icon-fb.png"></a></li>
+                    <li><a href="https://twitter.com/schaefflergroup" target="_blank"><img src="@appPath/Contents/images/icon-twitter.png"></a></li>
+                    <li><a href="https://www.instagram.com/schaefflergroup/" target="_blank"><img src="@appPath/Contents/images/icon-ig.png"></a></li>
+                    <li><a href="https://youtube.com/playlist?list=PL_BavLIXGWzCo8Nva8aSxHMo17My2XbRl" target="_blank"><img src="@appPath/Contents/images/icon-youtube.png"></a></li>
+                    <li><a href="https://www.linkedin.com/organization-guest/company/schaeffler?challengeId=AQFdoRts6e90PwAAAXLBpkakRjAXq1LUX5D7MROZ1CgL2qjhglZxQ0Rg6W8yIKBcfHS8k3c7AcduIjmnEaL_6XA54jeFErMuIQ&submissionId=7b27d05f-5b4b-1916-3600-42cc533b3178" target="_blank"><img src="@appPath/Contents/images/icon-linkedin.png"></a></li>
+                </ul>
+            }
             <p class="policy">
 
                 @if (ViewBag.Title != null && ViewBag.Title == "JP")
@@ -97,9 +113,7 @@
                 }
                 else
                 {
-                    <a href="https://www.schaeffler.sg/content.schaeffler.sg/en/meta/privacy-policy/index.jsp" target="_blank">
-                        Privacy policy
-                    </a>
+                    <a href="https://www.schaeffler.com.au/content.schaeffler.au/en/meta/privacy-policy/index.jsp" target="_blank">Privacy Policy</a> <span>|</span> <a href="https://www.schaeffler.com.au/content.schaeffler.au/en/meta/legal-notice/index.jsp" target="_blank">Legal Notice</a>
                 }
             </p>
         </div>

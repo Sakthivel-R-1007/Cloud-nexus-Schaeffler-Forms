@@ -1,6 +1,7 @@
 ﻿using ClosedXML.Excel;
 using Schaeffler.Domain;
 using Schaeffler.Filters;
+using Schaeffler.Helpers;
 using Schaeffler.Persistence.Interface;
 using Schaeffler.Service.Interfaces;
 using System;
@@ -20,11 +21,13 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
     {
         #region Constructor And Private Members
 
+        private IUserAccountDao _userAccountDao;
         private IFeedbackDao _feedbackDao;
         private IUtilityService _utilityService;
 
-        public HomeController(IFeedbackDao feedbackDao, IUtilityService utilityService)
+        public HomeController(IFeedbackDao feedbackDao, IUtilityService utilityService, IUserAccountDao userAccountDao)
         {
+            _userAccountDao = userAccountDao;
             _feedbackDao = feedbackDao;
             _utilityService = utilityService;
         }
@@ -37,7 +40,12 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
         }
         public void Export()
         {
-
+            User U = new User();
+            if (Session["UserAccount"] != null)
+            {
+                U = ((User)Session["UserAccount"]);
+               
+            }
             DataTable list = new DataTable();
 
             string ReportName = "Schaeffler";
@@ -45,7 +53,7 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
             string range = "A1:B2";
 
 
-            ReportModelView report = _feedbackDao.GetFeedbackReportNew();
+            ReportModelView report = _feedbackDao.GetFeedbackReportNew(U.Country);
             if (report != null)
             {
 
@@ -72,7 +80,7 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
                     if (BS != null && BS.Count > 0)
                     {
                         DataTable list1 = new DataTable("Brand Service");
-                        list1 = BrandServiceDataTable(BS);
+                        list1 = BrandServiceDataTable(BS, U.Country);
                         DataRow dr1 = list.NewRow();
                         var worksheet = workbook.AddWorksheet(list1, "Brand Service");
                         worksheet.Row(1).InsertRowsAbove(1);
@@ -161,22 +169,48 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
             return dataTable;
         }
 
-        private DataTable BrandServiceDataTable<T>(List<T> items)
+        private DataTable BrandServiceDataTable<T>(List<T> items, string Country)
         {
             DataTable dataTable = ToDataTable<T>(items);
-            dataTable.Columns.Remove("Name");
+           // dataTable.Columns.Remove("Name");
             dataTable.Columns.Remove("Id_Name");
             dataTable.Columns.Remove("TH_Name");
+            dataTable.Columns.Remove("KR_Name");
+            dataTable.Columns.Remove("JP_Name");
+            dataTable.Columns.Remove("AU_Name");
+            dataTable.Columns.Remove("BrandName");
 
-            dataTable.Columns["Id"].ColumnName = "No.";
-            dataTable.Columns["LuK"].ColumnName = "LuK";
-            dataTable.Columns["Msg1"].ColumnName = "Please specify";
-            dataTable.Columns["INA"].ColumnName = "INA";
-            dataTable.Columns["Msg2"].ColumnName = "Please specify ";
-            dataTable.Columns["FAG"].ColumnName = "FAG";
-            dataTable.Columns["Msg3"].ColumnName = " Please specify";
-            dataTable.Columns["REPXPERT"].ColumnName = "REPXPERT";
-            dataTable.Columns["Msg4"].ColumnName = " Please specify ";
+            if (Country == "Korea")
+            {
+                dataTable.Columns["Id"].ColumnName = "No.";
+                dataTable.Columns["LuK"].ColumnName = "LuK";
+                dataTable.Columns["Msg1"].ColumnName = "Please specify";
+                dataTable.Columns["INA"].ColumnName = "INA";
+                dataTable.Columns["Msg2"].ColumnName = "Please specify ";
+                dataTable.Columns["FAG"].ColumnName = "FAG";
+                dataTable.Columns["Msg3"].ColumnName = " Please specify";
+                dataTable.Columns["REPXPERT"].ColumnName = "REPXPERT";
+                dataTable.Columns["Msg4"].ColumnName = " Please specify ";
+                dataTable.Columns["TruPower"].ColumnName = "셰플러 TruPower";
+                dataTable.Columns["Msg5"].ColumnName = " Please specify  ";
+            }
+            else
+            {
+                dataTable.Columns.Remove("TruPower");
+                dataTable.Columns.Remove("Msg5");
+
+                dataTable.Columns["Id"].ColumnName = "No.";
+                dataTable.Columns["LuK"].ColumnName = "LuK";
+                dataTable.Columns["Msg1"].ColumnName = "Please specify";
+                dataTable.Columns["INA"].ColumnName = "INA";
+                dataTable.Columns["Msg2"].ColumnName = "Please specify ";
+                dataTable.Columns["FAG"].ColumnName = "FAG";
+                dataTable.Columns["Msg3"].ColumnName = " Please specify";
+                dataTable.Columns["REPXPERT"].ColumnName = "REPXPERT";
+                dataTable.Columns["Msg4"].ColumnName = " Please specify ";
+                //dataTable.Columns["TruPower"].ColumnName = "셰플러 TruPower";
+                //dataTable.Columns["Msg5"].ColumnName = " Please specify  ";
+            }
             dataTable.AcceptChanges();
             return dataTable;
         }
@@ -184,10 +218,11 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
         private DataTable VehicleTypeDataTable<T>(List<T> items)
         {
             DataTable dataTable = ToDataTable<T>(items);
-            dataTable.Columns.Remove("Name");
+            //dataTable.Columns.Remove("Name");
             dataTable.Columns.Remove("Id_Name");
             dataTable.Columns.Remove("TH_Name");
-
+            dataTable.Columns.Remove("KR_Name");
+            dataTable.Columns.Remove("JP_Name");
 
             dataTable.Columns["Id"].ColumnName = "No.";
             dataTable.Columns["PassengerCar"].ColumnName = "Passenger Car";
@@ -202,9 +237,12 @@ namespace Schaeffler.Web.Areas.Admin.Controllers
         private DataTable InformationTypeDataTable<T>(List<T> items)
         {
             DataTable dataTable = ToDataTable<T>(items);
-            dataTable.Columns.Remove("Name");
+           // dataTable.Columns.Remove("Name");
             dataTable.Columns.Remove("Id_Name");
             dataTable.Columns.Remove("TH_Name");
+            dataTable.Columns.Remove("KR_Name");
+            dataTable.Columns.Remove("JP_Name");
+            dataTable.Columns.Remove("InformationName");
 
             dataTable.Columns["Id"].ColumnName = "No.";
             dataTable.Columns["ProductInformation"].ColumnName = "Product Information";

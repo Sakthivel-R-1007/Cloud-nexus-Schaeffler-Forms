@@ -13,14 +13,14 @@ using System.Web.Mvc;
 
 namespace Schaeffler.Web.Controllers
 {
-    public class JapanController : Controller
+    public class KoreaController : Controller
     {
         #region Constructor And Private Members
 
         private IFeedbackDao _feedbackDao;
         private IUtilityService _utilityService;
 
-        public JapanController(IFeedbackDao feedbackDao, IUtilityService utilityService)
+        public KoreaController(IFeedbackDao feedbackDao, IUtilityService utilityService)
         {
             _feedbackDao = feedbackDao;
             _utilityService = utilityService;
@@ -58,7 +58,7 @@ namespace Schaeffler.Web.Controllers
         {
 
 
-            fb.Country = "Japan";
+            fb.Country = "Korea";
             fb.SystemIp = GetIp();
             Int64 Id = _feedbackDao.Savefeedback(fb);
             if (Id > 0)
@@ -66,10 +66,10 @@ namespace Schaeffler.Web.Controllers
                 feedback feedback = _feedbackDao.GetFeedback(Id);
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append(RenderRazorViewToString("_feedbackform_jp", feedback));
-                var result = _utilityService.SendEmail("Schaeffler - (JP) Contact Us  Enquiry <" + DateTime.Now.ToString() + " > ", sb.ToString(), null, true, null,null, "Japan");
+                sb.Append(RenderRazorViewToString("_feedbackform_kr", feedback));
+                var result = _utilityService.SendEmail("Schaeffler - (KR) Contact Us  Enquiry <" + DateTime.Now.ToString() + " > ", sb.ToString(), null, true, null,null, "Korea");
 
-                return RedirectToRoute("index_jp-thankyou");
+                return RedirectToRoute("index_kr-thankyou");
             }
             IList<BrandService> brandServices = _feedbackDao.GetBrandServices();
             IList<VehicleType> vehicleTypes = _feedbackDao.GetVehicleTypes();
@@ -89,7 +89,7 @@ namespace Schaeffler.Web.Controllers
             return View();
         }
 
-        public ActionResult Index_JP_ThankYou()
+        public ActionResult Index_KR_ThankYou()
         {
             return View();
         }

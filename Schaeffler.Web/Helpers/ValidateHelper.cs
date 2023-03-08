@@ -2,7 +2,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace BestMotors.Helpers
+namespace Schaeffler.Helpers
 {
     public static class ValidateHelper
     {

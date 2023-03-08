@@ -171,8 +171,8 @@ namespace Schaeffler.Persistence.Implementation
 
         public feedback GetFeedback(Int64 Id)
         {
-          
-           feedback feedback = new feedback();
+
+            feedback feedback = new feedback();
             DynamicParameters param = new DynamicParameters();
             param.Add("@Id", Id);
             using (IDbConnection conn = factory.GetConnection())
@@ -197,17 +197,17 @@ namespace Schaeffler.Persistence.Implementation
 
         }
 
-        public ReportModelView GetFeedbackReportNew()
+        public ReportModelView GetFeedbackReportNew(string Country)
         {
             ReportModelView report = new ReportModelView();
             List<feedback> feedback = null;
             DynamicParameters param = new DynamicParameters();
-
+            param.Add("@Country", Country);
             using (IDbConnection conn = factory.GetConnection())
             {
                 conn.Open();
                 string SQL = @"[GetFeedBackReportNew]";
-                var contents = conn.QueryMultiple(SQL, param, commandType: CommandType.StoredProcedure);
+                var contents = conn.QueryMultiple(sql: SQL, param: param, commandType: CommandType.StoredProcedure);
                 if (contents != null)
                 {
                     feedback = contents.Read<feedback>().ToList();

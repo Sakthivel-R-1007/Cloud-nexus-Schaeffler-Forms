@@ -46,6 +46,18 @@ namespace Schaeffler.Web
             //    );
 
             routes.MapRoute(
+                   name: "AU",
+                   url: "AU",
+                   defaults: new { controller = "Australia", action = "Index" },
+                   namespaces: new[] { "Schaeffler.Web.Controllers" }
+           );
+            routes.MapRoute(
+                   name: "EN",
+                   url: "EN",
+                   defaults: new { controller = "Home", action = "Index_EN" },
+                   namespaces: new[] { "Schaeffler.Web.Controllers" }
+           );
+            routes.MapRoute(
                    name: "index_jp-thankyou",
                    url: "JP/index_jp-thankyou",
                    defaults: new { controller = "Japan", action = "Index_JP_ThankYou" },
@@ -53,9 +65,30 @@ namespace Schaeffler.Web
            );
 
             routes.MapRoute(
+                   name: "index_au-thankyou",
+                   url: "AU/index_au-thankyou",
+                   defaults: new { controller = "Australia", action = "Index_AU_ThankYou" },
+                   namespaces: new[] { "Schaeffler.Web.Controllers" }
+           );
+
+            routes.MapRoute(
+                   name: "index_kr-thankyou",
+                   url: "KR/index_kr-thankyou",
+                   defaults: new { controller = "Korea", action = "Index_KR_ThankYou" },
+                   namespaces: new[] { "Schaeffler.Web.Controllers" }
+           );
+
+            routes.MapRoute(
                    name: "Index",
                    url: "JP",
                    defaults: new { controller = "Japan", action = "Index" },
+                   namespaces: new[] { "Schaeffler.Web.Controllers" }
+           );
+
+            routes.MapRoute(
+                   name: "KR",
+                   url: "KR",
+                   defaults: new { controller = "Korea", action = "Index" },
                    namespaces: new[] { "Schaeffler.Web.Controllers" }
            );
 
